@@ -3,6 +3,12 @@ body {
 }
 
 #board {
-    /* background-color: green; */
     background-image: url("./doodlejumpbg.png");
+    width: 240px;
+    height: 320px;
+    background-color: lightblue;
+    border: 3px solid slategray;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
 }
