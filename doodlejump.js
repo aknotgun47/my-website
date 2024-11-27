@@ -28,7 +28,7 @@ let gravity = 0.15;
 
 //platforms
 let platformArray = [];
-let platformWidth = 35;
+let platformWidth = 45;
 let platformHeight = 8;
 let platformImg;
 
@@ -120,11 +120,11 @@ function update() {
 
 function moveDoodler(e) {
     if (e.code == "ArrowRight" || e.code == "Digit6") { //move right
-        velocityX = 3;
+        velocityX = 2;
         doodler.img = doodlerRightImg;
     }
     else if (e.code == "ArrowLeft" || e.code == "Digit4") { //move left
-        velocityX = -3;
+        velocityX = -2;
         doodler.img = doodlerLeftImg;
     }
     else if (e.code == "Space" || e.code == "Digit5" && gameOver) {
