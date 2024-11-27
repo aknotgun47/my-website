@@ -1,7 +1,7 @@
 //board
 let board;
-let boardWidth = 240;
-let boardHeight = 320;
+let boardWidth = 225;
+let boardHeight = 300;
 let context;
 
 //doodler
@@ -23,8 +23,8 @@ let doodler = {
 //physics
 let velocityX = 0; 
 let velocityY = 0; //doodler jump speed
-let initialVelocityY = -5; //starting velocity Y
-let gravity = 0.2;
+let initialVelocityY = -4; //starting velocity Y
+let gravity = 0.15;
 
 //platforms
 let platformArray = [];
