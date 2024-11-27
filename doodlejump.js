@@ -5,10 +5,10 @@ let boardHeight = 320;
 let context;
 
 //doodler
-let doodlerWidth = 32;
-let doodlerHeight = 32;
+let doodlerWidth = 30;
+let doodlerHeight = 30;
 let doodlerX = boardWidth/2 - doodlerWidth/2;
-let doodlerY = boardHeight*4/6 - doodlerHeight;
+let doodlerY = boardHeight*7/8 - doodlerHeight;
 let doodlerRightImg;
 let doodlerLeftImg;
 
@@ -23,13 +23,13 @@ let doodler = {
 //physics
 let velocityX = 0; 
 let velocityY = 0; //doodler jump speed
-let initialVelocityY = -7; //starting velocity Y
-let gravity = 0.6;
+let initialVelocityY = -5; //starting velocity Y
+let gravity = 0.2;
 
 //platforms
 let platformArray = [];
-let platformWidth = 50;
-let platformHeight = 15;
+let platformWidth = 35;
+let platformHeight = 8;
 let platformImg;
 
 let score = 0;
@@ -110,24 +110,24 @@ function update() {
     //score
     updateScore();
     context.fillStyle = "black";
-    context.font = "20px sans-serif";
+    context.font = "16px sans-serif";
     context.fillText(score, 5, 20);
 
     if (gameOver) {
-        context.fillText("Game Over: Press 'Space' to Restart", boardWidth/7, boardHeight*7/8);
+        context.fillText("Game Over: Press '5'", boardWidth/7, boardHeight*7/8);
     }
 }
 
 function moveDoodler(e) {
     if (e.code == "ArrowRight" || e.code == "Digit6") { //move right
-        velocityX = 4;
+        velocityX = 3;
         doodler.img = doodlerRightImg;
     }
     else if (e.code == "ArrowLeft" || e.code == "Digit4") { //move left
-        velocityX = -4;
+        velocityX = -3;
         doodler.img = doodlerLeftImg;
     }
-    else if (e.code == "Digit5" && gameOver) {
+    else if (e.code == "Space" || e.code == "Digit5" && gameOver) {
         //reset
         doodler = {
             img : doodlerRightImg,
@@ -153,7 +153,7 @@ function placePlatforms() {
     let platform = {
         img : platformImg,
         x : boardWidth/2,
-        y : boardHeight - 50,
+        y : boardHeight - 70,
         width : platformWidth,
         height : platformHeight
     }
@@ -174,7 +174,7 @@ function placePlatforms() {
         let platform = {
             img : platformImg,
             x : randomX,
-            y : boardHeight - 75*i - 150,
+            y : boardHeight - 75*i - 200,
             width : platformWidth,
             height : platformHeight
         }
